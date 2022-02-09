@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Checkout example · Bootstrap v5.1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="headers.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <script>
+	function show(){
+	document.getElementById("dataTable").style.display="block";
+	 
+	}
+
+	function showFields(){
+
+	if(document.getElementById("history").checked){
+document.getElementById("dateFields1").style.display="block";
+document.getElementById("dateFields2").style.display="block";
+}else{
+document.getElementById("dateFields1").style.display="none";
+document.getElementById("dateFields2").style.display="none";
+}
+
+	}
+	
+    </script>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+<div class="container">
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img class="d-block mx-auto mb-4" src="logo_euroclear.png" alt="" width="50" height="50">
+        <span class="fs-4">&nbsp;iSA - Information service for authorities</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+      </ul>
+ </header>
+  <main>
+    <div class="py-5 text-center">
+      
+      <h2>Order Holdings</h2>
+      <p class="lead">Here you can order holdings of private person</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Last ordered on </span>
+          <span class="badge bg-primary rounded-pill">2</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">2110345698-</h6>
+              <small class="text-muted">02.12.2021</small>
+            </div>
+            <span class="text-muted">6</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">543289098-</h6>
+              <small class="text-muted">02.12.2021</small>
+            </div>
+            <span class="text-muted">10</span>
+          </li>
+          
+        </ul>
+
+       
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Search</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+		<div class="form-check">
+              <input id="current"  type="radio" class="form-check-input" value="1" name="dataFetch" checked onclick="showFields();">
+              <label class="form-check-label" for="current">Current</label>
+            </div>
+            <div class="form-check">
+              <input id="history"  type="radio" class="form-check-input" value="0" name="dataFetch" onclick="showFields();">
+              <label class="form-check-label" for="history">History</label>
+            </div>
+            <div class="col-sm-6 mb-2">
+              <h6 class="my-0">Identification code</h6>
+              <input type="text" class="form-control" id="identificationCode"  >
+              
+            </div>
+ <div class="row gy-3"  >
+	
+	 <div class="col-md-3" id="dateFields1" style="display:none">
+              <label for="fromDate" class="form-label">From date</label>
+              <input type="text" class="form-control" id="fromDate" >
+             
+            </div>
+
+            <div class="col-md-3 mb-2" id="dateFields2" style="display:none">
+              <label for="toDate" class="form-label">to Date</label>
+              <input type="text" class="form-control" id="toDate" >
+             
+            </div>
+
+</div>
+            
+                  
+</div>
+<div >          
+<button class="btn btn-primary btn-md " type="button" onclick="show()">Continue</button>
+</div>
+        </form>
+      
+    </div>
+
+<div class="col-md-7 col-lg-8" id="dataTable" style="display:none">
+<div class="d-flex gap-5 justify-content-center">
+  <div class="list-group mx-0">
+	
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Name</label>
+         <small class="text-muted">AALA ARNO JAAKKO JUHANI</small>
+      </div>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">DOB</label>
+         <small class="text-muted">23.06.1975</small>
+      </div>
+    </label>
+    
+  </div>
+   <div class="list-group mx-0">
+	
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Identification code</label>
+         <small class="text-muted">1203371119-</small>
+      </div>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Address</label>
+         <small class="text-muted">TIIRISMAANTIE 5 A 20 Helsinki</small>
+      </div>
+    </label>
+    
+  </div>
+   <div class="list-group mx-0">
+	
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Account status</label>
+         <small class="text-muted">Active</small>
+      </div>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Email</label>
+         <small class="text-muted">jaakko@arno.fin</small>
+      </div>
+    </label>
+    
+  </div>
+</div>
+<table id="example" class="table table-striped" style="width:100%; ">
+        <thead>
+            <tr>
+                <th>Isin code</th>
+                <th>Security name</th>
+                <th>Quantity</th>
+				<th>Value</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>FI0009901607</td>
+                <td>Nokia</td>
+                <td>100</td>
+				<td>1234567,00</td>
+                
+            </tr>
+<tr>
+                <td>FI0989786223</td>
+                <td>SECOND EQUITY INSTRUMENT</td>
+                <td>123</td>
+		<td>234567,00</td>
+                
+            </tr>
+			<tr>
+                <td>FI0125371653</td>
+                <td>FIRST EQUITY INSTRUMENT</td>
+                <td>70</td>
+				<td>345627,00</td>
+                
+            </tr>
+			<tr>
+                <td>FI0009005474</td>
+                <td>BIOHIT OYJ A</td>
+                <td>125</td>
+				<td>125890,00</td>
+                
+            </tr>
+			<tr>
+                <td>FI4000007844</td>
+                <td>VAAHTERAPUU B141</td>
+                <td>100</td>
+				<td>100000,00</td>
+                
+            </tr>
+			<tr>
+                <td>FI0000000702</td>
+                <td>HOUSING2 SHARES OF A COMPANY</td>
+                <td>325</td>
+				<td>32567895,00</td>
+                
+            </tr>
+			<tr>
+                <td>FI1600000016</td>
+                <td>LDEVIANT 200</td>
+                <td>200</td>
+				<td>2056789,00</td>
+                
+            </tr>
+			<tr>
+                <td>FI0009005482</td>
+                <td>Fortunum OYJ</td>
+                <td>150</td>
+				<td>3145627,00</td>
+                
+            </tr>
+			<tr>
+                <td>FI0009005482</td>
+                <td>STEBV</td>
+                <td>312</td>
+				<td>34578627,00</td>
+                
+            </tr>
+			<tr>
+                <td>FI0000000004</td>
+                <td>Nokia OYJ</td>
+                <td>230</td>
+				<td>2345627,00</td>
+                
+            </tr>
+</tbody>
+</table>
+<div class="form-check" style="align:right">
+<a href="holding.pdf" target="new"><img  src="pdf-icon.png" alt="" width="30" height="30"></a>
+<a href="holding.csv" target="new"><img  src="xls-icon.png" alt="" width="30" height="30"></a>
+</div>
+</div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; Euroclear Finland Oy</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
