@@ -1,0 +1,21 @@
+[
+{
+"Isincode" : "FI0009005482", "Securityname" : "STEBV","Quantity": "312","Value":"34578627,00"
+},
+{
+    "Isincode" : "FI0000000004", "Securityname" : "Nokia OYJ","Quantity": "230","Value":"2345627,00"
+},
+{
+    "Isincode" : "FI1600000016", "Securityname" : "LDEVIANT 200","Quantity": "200","Value":"2056789,00"
+},
+{
+    "Isincode" : "FI0125371653", "Securityname" : "FIRST EQUITY INSTRUMENT","Quantity": "70","Value":"345627,00"
+},
+{
+    "Isincode" : "FI0989786223", "Securityname" : "SECOND EQUITY INSTRUMENT","Quantity": "145","Value":"234567,00"
+},
+{
+    "Isincode" : "FI4000007844", "Securityname" : "VAAHTERAPUU B141","Quantity": "100","Value":"100000,00"
+}
+
+]
