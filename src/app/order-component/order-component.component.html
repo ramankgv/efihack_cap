@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Checkout example · Bootstrap v5.1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .btn-primary {
+        background-color: #CC3333;
+      }
+      .nav-pills .nav-link.active {
+        background-color: #CC3333;
+      }
+      .nav-link.inactive {
+        color: #CC3333;
+      }
+    </style>
+
+    <script>
+	function show(){
+	document.getElementById("dataTable").style.display="block";
+	 
+	}
+
+	function showFields(){
+
+	if(document.getElementById("history").checked){
+document.getElementById("dateFields1").style.display="block";
+document.getElementById("dateFields2").style.display="block";
+}else{
+document.getElementById("dateFields1").style.display="none";
+document.getElementById("dateFields2").style.display="none";
+}
+
+	}
+	
+    </script>
+    <!-- Custom styles for this template -->
+   
+  </head>
+  <body class="bg-light">
+    
+<div class="container">
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img class="d-block mx-auto mb-4" src="/assets/images/logo_euroclear.png" alt="" width="50" height="50">
+        <span class="fs-4">&nbsp;iSA - Information service for authorities</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link inactive">About</a></li>
+      </ul>
+ </header>
+  <main>
+    <div class="py-2 text-center">
+      
+      <h3>Order Holdings</h3>
+      <p class="lead">Here you can order holdings</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+               
+      </div>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Search</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+		<div class="form-check">
+              <input id="current"  type="radio" class="form-check-input" value="1" name="dataFetch" checked >
+              <label class="form-check-label" for="current">Current</label>
+            </div>
+            <div class="form-check">
+              <input id="history"  type="radio" class="form-check-input" value="0" name="dataFetch">
+              <label class="form-check-label" for="history">History</label>
+            </div>
+            <div class="col-sm-6 mb-2">
+              <h6 class="my-0">Identification code</h6>
+              <input type="text" class="form-control" id="identificationCode"  >
+              
+            </div>
+ <div class="row gy-3"  >
+	
+	 <div class="col-md-3" id="dateFields1">
+              <label for="fromDate" class="form-label">From date</label>
+              <input type="text" class="form-control" id="fromDate" [(ngModel)]="fromDate" name="frmDate">
+             
+            </div>
+
+            <div class="col-md-3 mb-2" id="dateFields2">
+              <label for="toDate" class="form-label">to Date</label>
+              <input type="text" class="form-control" id="toDate" >
+             
+            </div>
+
+</div>
+            
+                  
+</div>
+<div >          
+<button class="btn btn-primary btn-md mb-4 " type="button" (click)="getHoldingsList()">Continue</button>
+</div>
+        </form>
+      
+    </div>
+<div *ngIf="holdingList">
+<div class="col-md-7 col-lg-8" id="dataTable" >
+<div class="d-flex gap-5 justify-content-center">
+  <div class="list-group mx-0">
+	
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Name</label>
+         <small class="text-muted">AALA ARNO JAAKKO JUHANI</small>
+      </div>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">DOB</label>
+         <small class="text-muted">23.06.1975</small>
+      </div>
+    </label>
+    
+  </div>
+   <div class="list-group mx-0">
+	
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Identification code</label>
+         <small class="text-muted">1203371119-</small>
+      </div>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Address</label>
+         <small class="text-muted">TIIRISMAANTIE 5 A 20 Helsinki</small>
+      </div>
+    </label>
+    
+  </div>
+   <div class="list-group mx-0">
+	
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Account status</label>
+         <small class="text-muted">Active</small>
+      </div>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+      <div class="form-check">
+	<label  class="form-label">Email</label>
+         <small class="text-muted">jaakko@arno.fin</small>
+      </div>
+    </label>
+    
+  </div>
+</div>
+
+<table id="example" class="table table-striped" style="width:100%; ">
+
+        <thead>
+            <tr >
+                <th>Isin code</th>
+                <th>Security name</th>
+                <th>Quantity</th>
+				<th>Value</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let holding of holdingList ">
+                <td>{{holding.Isincode}}</td>
+                <td>{{holding.Securityname}}</td>
+                <td>{{holding.Quantity}}</td>
+				<td>{{holding.Value}}</td>
+                
+            </tr>
+
+</tbody>
+</table>
+<div class="form-check" >
+<a href="/assets/holding.pdf" target="new"><img  src="/assets/images/pdf-icon.png" alt="" width="30" height="30"></a>
+<a href="/assets/holding.csv" target="new"><img  src="/assets/images/xls-icon.png" alt="" width="30" height="30"></a>
+</div>
+</div>
+</div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; Euroclear Finland Oy</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
